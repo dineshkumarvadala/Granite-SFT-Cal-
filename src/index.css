@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-800 bg-gray-50 font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white shadow-md hover:shadow-lg;
+  }
+
+  .nav-link {
+    @apply relative px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 origin-center;
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100;
+  }
+
+  .nav-link-active {
+    @apply text-blue-600;
+  }
+
+  .nav-link-active::after {
+    @apply scale-x-100;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* Form styling */
+input:focus, textarea:focus, select:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-opacity-50;
+}
+
+/* Table styling */
+table {
+  @apply w-full border-collapse;
+}
+
+th {
+  @apply font-semibold text-left;
+}
+
+tr {
+  @apply transition-colors duration-200;
+}
+
+tr:hover {
+  @apply bg-gray-50;
+}
+
+td {
+  @apply transition-all duration-200;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+/* Input styling */
+.input-animated {
+  @apply transition-all duration-200 border-b-2 border-gray-300 focus:border-blue-500;
+}
+
+/* Button hover effects */
+.button-hover {
+  @apply transform transition-all duration-300 hover:scale-105 active:scale-95;
+}
+
+/* Hero section */
+.hero-gradient {
+  @apply absolute inset-0 bg-gradient-to-b from-black/60 to-black/40;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
