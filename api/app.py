@@ -91,9 +91,9 @@ def categorize_slab(length, width, unit):
             return "PATTILU"
         
         # Check other categories
-        if length >= 45 and 22 < width < 34:
+        if length >= 45 and 22 <= width <= 34:
             return "UNDER SIZE"
-        elif length <= 44 and 22 < width < 34:
+        elif length <= 44 and 22 <= width <= 34:
             return "BELOW SIZE"
         elif length >= 45 and width > 34:
             return "90UPS (UNDER SIZE)"
@@ -105,9 +105,9 @@ def categorize_slab(length, width, unit):
             return "PATTILU"
         
         # Check other categories
-        if length >= 114 and 55 < width < 86:
+        if length >= 114 and 55 <= width <= 86:
             return "UNDER SIZE"
-        elif length <= 111 and 55 < width < 86:
+        elif length <= 111 and 55 <= width <= 86:
             return "BELOW SIZE"
         elif length >= 114 and width > 86:
             return "90UPS (UNDER SIZE)"
